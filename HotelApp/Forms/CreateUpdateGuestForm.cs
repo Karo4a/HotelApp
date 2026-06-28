@@ -63,9 +63,14 @@ namespace HotelApp.Forms
 
         private void ValidateData()
         {
+            if (fullNameTextBox.Text.Trim().Length == 0)
+            {
+                throw new ValidationException("ФИО не должно быть пустым!");
+            }
+
             if (birthdayDateTimePicker.Value > DateTime.Now)
             {
-                throw new ValidationException("Дата рождения должны быть в прошлом!");
+                throw new ValidationException("Дата рождения должна быть в прошлом!");
             }
         }
 
