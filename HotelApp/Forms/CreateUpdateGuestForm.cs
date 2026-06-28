@@ -82,8 +82,8 @@ namespace HotelApp.Forms
             }
 
 
-            if (MessageBox.Show("Сохранить?", "Сохранение", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-                == DialogResult.OK)
+            if (MessageBox.Show("Сохранить?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
             {
                 FillModel();
                 try
@@ -95,7 +95,7 @@ namespace HotelApp.Forms
 
                     Program.Context.SaveChanges();
                     DialogResult = DialogResult.OK;
-                    MessageBox.Show("Сохранение успешно!", "Сохранение", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    MessageBox.Show("Сохранение успешно!", "Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
